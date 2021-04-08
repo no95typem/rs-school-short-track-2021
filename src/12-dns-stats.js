@@ -23,9 +23,9 @@
 function getDNSStats(domains) {
   const map = new Map();
   for (let i = 0; i < domains.length; i++) {
-    for (let i = domains[i].length - 1; i > -1; i--) {
-      if (domains[i][i] === '.') {
-        const dns = `.${domains[i].substr(i + 1).split('.').reverse().join('.')}`;
+    for (let j = domains[i].length - 1; j > -1; j--) {
+      if (domains[i][j] === '.') {
+        const dns = `.${domains[i].substr(j + 1).split('.').reverse().join('.')}`;
         if (map.has(dns)) map.set(dns, map.get(dns) + 1);
         else map.set(dns, 1);
       }

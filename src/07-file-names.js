@@ -17,8 +17,8 @@ function renameFiles(names) {
   const namesSet = new Set();
   for (let i = 0; i < names.length; i++) {
     let newName = names[i];
-    for (let i = 1; i < Number.MAX_VALUE; i++) {
-      if (namesSet.has(newName)) newName = `${names[i]}(${i})`;
+    for (let j = 1; j < Number.MAX_VALUE; j++) {
+      if (namesSet.has(newName)) newName = `${names[i]}(${j})`;
       else {
         namesSet.add(newName);
         break;

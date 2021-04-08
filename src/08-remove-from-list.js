@@ -18,7 +18,7 @@
  */
 
 function removeKFromList(l, k) {
-  return l.filter(item => item.value!=k);
+  return l.filter((item) => item.value !== k);
 }
 
 module.exports = removeKFromList;

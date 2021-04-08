@@ -9,13 +9,13 @@
  *
  */
 function encodeLine(str) {
-  let outputStr = "";
-  for(let i = 0; i < str.length; i++) {
+  let outputStr = '';
+  for (let i = 0; i < str.length; i++) {
     let counter = 1;
-    while(str[i]==str[i + counter]) counter++;
-    if(counter == 1) outputStr += str[i];
+    while (str[i] === str[i + counter]) counter++;
+    if (counter === 1) outputStr += str[i];
     else outputStr += counter + str[i];
-    i+=counter-1;
+    i += counter - 1;
   }
   return outputStr;
 }

@@ -10,14 +10,14 @@
  * The result should be [-1, 150, 160, 170, -1, -1, 180, 190]
  */
 function sortByHeight(arr) {
-  let sortedAndFilteredArrItems = arr.filter(item => item!=-1).sort();
-  for(let i=0; i<arr.length; i++) {
-    if(arr[i]!=-1) {
-      arr[i] = sortedAndFilteredArrItems[0];
-      sortedAndFilteredArrItems.shift();
+  const sortedAndFilteredArrItems = arr.filter((item) => item !== -1).sort();
+  const arrCopy = arr.slice();
+  for (let i = 0; i < arr.length; i++) {
+    if (arrCopy[i] !== -1) {
+      arrCopy[i] = sortedAndFilteredArrItems.shift();
     }
   }
-  return arr;
+  return arrCopy;
 }
 
 module.exports = sortByHeight;

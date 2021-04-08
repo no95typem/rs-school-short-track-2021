@@ -12,7 +12,10 @@
  */
 
 class Queue {
-  queue = [];
+  
+  Queue() {
+    this.queue = [];
+  }
 
   get size() {
     return this.queue.length;

@@ -12,11 +12,12 @@
  */
 function getSumOfDigits(n) {
   let sum = 0;
-  while(n>=1) {
-    sum+=n%10;
-    n = (n - n%10)/10;
+  let nCopy = n;
+  while (nCopy >= 1) {
+    sum += nCopy % 10;
+    nCopy = (nCopy - (nCopy % 10)) / 10;
   }
-  if(sum > 9) sum = getSumOfDigits(sum);
+  if (sum > 9) sum = getSumOfDigits(sum);
   return sum;
 }
 

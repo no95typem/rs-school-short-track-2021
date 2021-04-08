@@ -9,7 +9,7 @@
  *
  */
 function getEmailDomain(email) {
-  email.match(new RegExp("@", "g"));
+  email.match(new RegExp('@', 'g'));
   return RegExp.rightContext;
 }
 

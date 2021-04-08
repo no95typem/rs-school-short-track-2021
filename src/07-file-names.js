@@ -14,11 +14,11 @@
  *
  */
 function renameFiles(names) {
-  let namesSet = new Set();
-  for(let name of names) {
-    let newName = name;
-    for(let i=1; i<Number.MAX_VALUE; i++) {
-      if(namesSet.has(newName)) newName = name + "(" + i + ")";
+  const namesSet = new Set();
+  for (let i = 0; i < names.length; i++) {
+    let newName = names[i];
+    for (let i = 1; i < Number.MAX_VALUE; i++) {
+      if (namesSet.has(newName)) newName = `${names[i]}(${i})`;
       else {
         namesSet.add(newName);
         break;

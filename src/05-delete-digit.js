@@ -10,10 +10,10 @@
  *
  */
 function deleteDigit(n) {
-  let nArr = n.toString().split('');
+  const nArr = n.toString().split('');
   let indexOfMin = 0;
-  for(let i=0; i<nArr.length; i++) {
-    if(nArr[i] < nArr[indexOfMin]) indexOfMin = i;
+  for (let i = 0; i < nArr.length; i++) {
+    if (nArr[i] < nArr[indexOfMin]) indexOfMin = i;
   }
   nArr.splice(indexOfMin, 1);
   return nArr.join('');

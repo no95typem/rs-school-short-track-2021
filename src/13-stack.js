@@ -11,7 +11,9 @@
  *
  */
 class Stack {
-  array = [];
+  Stack() {
+    this.array = [];
+  }
 
   push(element) {
     this.array.push(element);

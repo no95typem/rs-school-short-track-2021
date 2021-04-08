@@ -22,18 +22,21 @@
  * ]
  */
 function minesweeper(matrix) {
-  let outputMatrix = [];
-  for(let y=0; y<matrix.length; y++) {
+  const outputMatrix = [];
+  for (let y = 0; y < matrix.length; y++) {
     outputMatrix.push([]);
-    for(let x=0; x<matrix[y].length; x++) {
+    for (let x = 0; x < matrix[y].length; x++) {
       let counter = 0;
-      for(let ny=y-1; ny<y+2; ny++) {
-        if(ny < 0 || ny > matrix.length-1) continue;
-        for(let nx=x-1; nx<x+2; nx++) {
-          if(nx < 0 || nx > matrix[ny].length-1) continue;
-          if(nx==x && ny==y) continue;
-          if(matrix[ny][nx]==true) {
-            counter++;
+      for (let ny = y - 1; ny < y + 2; ny++) {
+        if (!(ny < 0 || ny > matrix.length - 1)) {
+          for (let nx = x - 1; nx < x + 2; nx++) {
+            if (!(nx < 0 || nx > matrix[ny].length - 1)) {
+              if (!(nx === x && ny === y)) {
+                if (matrix[ny][nx] === true) {
+                  counter++;
+                }
+              }
+            }
           }
         }
       }

@@ -14,7 +14,7 @@ function getCommonCharacterCount(s1, s2) {
   let s2copy = s2.slice();
   for (let i = 0; i < s1.length; i++) {
     for (let j = 0; j < s2copy.length; j++) {
-      if (s1[i] === s2[j]) {
+      if (s1[i] === s2copy[j]) {
         matchStr += s1[i];
         s2copy = s2copy.slice(0, j) + s2copy.slice(-(s2copy.length - j - 1));
         break;

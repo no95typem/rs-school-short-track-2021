@@ -16,7 +16,7 @@ function deleteDigit(n) {
     if (nArr[i] < nArr[indexOfMin]) indexOfMin = i;
   }
   nArr.splice(indexOfMin, 1);
-  return nArr.join('');
+  return +nArr.join('');
 }
 
 module.exports = deleteDigit;

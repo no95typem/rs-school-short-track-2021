@@ -12,11 +12,9 @@
  *
  */
 function findIndex(array, value) {
-  let index = 0;
-  for (let indexInc = Math.floor(array.length / 2); ;) {
-    index += indexInc;
-    if (array[index] > value) indexInc -= Math.floor(indexInc / 2);
-    else if (array[index] < value) indexInc += Math.floor(indexInc / 2);
+  for (let index = Math.floor(array.length / 2); ;) {
+    if (array[index] > value) index = Math.floor(index / 2);
+    else if (array[index] < value) index = Math.ceil((array.length - 1 - index) / 2);
     else return index;
   }
 }

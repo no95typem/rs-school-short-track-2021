@@ -20,7 +20,7 @@
 function removeKFromList(l, k) {
   const pointer = l;
   const arr = [];
-  while( pointer.next !== null ) {
+  while (pointer.next !== null) {
     arr.push = pointer.value;
   }
   return arr.filter((item) => item !== k);

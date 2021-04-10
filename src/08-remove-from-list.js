@@ -17,26 +17,8 @@
  * }
  */
 
- function ListNode(x) {
-  this.value = x;
-  this.next = null;
-}
-
-function convertArrayToList(arr) {
-  return arr.reverse().reduce((acc, cur) => {
-    if (acc) {
-      const node = new ListNode(cur);
-      node.next = acc;
-      return node;
-    }
-
-    return new ListNode(cur);
-  }, null);
-}
-
 function removeKFromList(l, k) {
   let pointer = l;
-  
   while (pointer && pointer.value === k) {
     pointer = pointer.next;
   }
@@ -47,7 +29,7 @@ function removeKFromList(l, k) {
     while (pointer && pointer.value === k) {
       pointer = pointer.next;
     }
-    if(pointer) {
+    if (pointer) {
       pointerNew.next = pointer;
       pointer = pointer.next;
       pointerNew = pointerNew.next;

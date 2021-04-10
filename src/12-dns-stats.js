@@ -34,7 +34,7 @@ function getDNSStats(domains) {
     if (map.has(dns)) map.set(dns, map.get(dns) + 1);
     else map.set(dns, 1);
   }
-  return map;
+  return Object.fromEntries(map);
 }
 
 module.exports = getDNSStats;

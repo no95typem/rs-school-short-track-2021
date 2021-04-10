@@ -12,7 +12,7 @@ const ListNode = require('../extensions/list-node');
  */
 
 class Queue {
-  Queue() {
+  constructor() {
     this.queue = [];
   }
 

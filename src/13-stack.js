@@ -11,7 +11,7 @@
  *
  */
 class Stack {
-  Stack() {
+  constructor() {
     this.array = [];
   }
 
@@ -28,4 +28,4 @@ class Stack {
   }
 }
 
-module.exports = Stack;
+// module.exports = Stack;

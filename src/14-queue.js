@@ -1,8 +1,5 @@
-// const ListNode = require('../extensions/list-node');
-function ListNode(x) {
-  this.value = x;
-  this.next = null;
-}
+const ListNode = require('../extensions/list-node');
+
 /**
  * Implement the Queue with a given interface via linked list (use ListNode extension above).
  *

@@ -24,11 +24,14 @@ class Queue {
   }
 
   enqueue(element) {
-    if (this.firstNode === null) this.firstNode = new ListNode(element);
-    else {
-      const newElement = new ListNode(element);
-      if (this.lastNode !== null) this.lastNode.next = newElement;
-      else this.firstNode.next = newElement;
+    if (this.firstNode === null) {
+      this.firstNode = new ListNode();
+      this.firstNode.value = element;
+      this.lastNode = this.firstNode;
+    } else {
+      const newElement = new ListNode();
+      newElement.value = element;
+      this.lastNode.next = newElement;
       this.lastNode = newElement;
     }
     this.queueSize++;
@@ -36,7 +39,11 @@ class Queue {
 
   dequeue() {
     const prevFirstNode = this.firstNode;
-    this.firstNode = this.firstNode.next;
+    if (this.firstNode.next !== 'undefined') this.firstNode = this.firstNode.next;
+    else {
+      this.firstNode = null;
+      this.lastNode = null;
+    }
     this.queueSize--;
     return prevFirstNode.value;
   }

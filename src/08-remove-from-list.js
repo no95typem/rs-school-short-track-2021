@@ -18,12 +18,21 @@
  */
 
 function removeKFromList(l, k) {
-  const pointer = l;
-  const arr = [];
-  while (pointer.next !== null) {
-    arr.push = pointer.value;
+  let pointer = l;
+  let newList;
+  while (pointer.value === k) {
+    pointer = pointer.next;
   }
-  return arr.filter((item) => item !== k);
+  newList = pointer;
+  pointer = pointer.next;
+  while (pointer.value !== null) {
+    while (pointer.value === k) {
+      pointer = pointer.next;
+    }
+    newList.next = pointer;
+    pointer = pointer.next;
+  }
+  return newList;
 }
 
 module.exports = removeKFromList;
